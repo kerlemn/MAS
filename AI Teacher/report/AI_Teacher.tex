@@ -8,10 +8,16 @@
 \geometry{
  a4paper,
  left=5mm,
+ right=5mm,
  top=5mm,
+ bottom=20mm
  }
 
 \begin{document}
+\noindent
+{\large\textbf{Multi-Agent Systems \hfill AI Teacher using Reinforcement Learning \hfill Andrea Longo}}
+
+\vspace{1em}
 \subsubsection*{Reinforcement Learning Formulation}
 
 To formulate the AI Teacher task as a reinforcement learning problem, we first assess the \emph{Markov assumption} by assuming that the student’s current mastery levels fully summarize their future learning potential, independently of their past performance history. Under this assumption, the system can be modeled as Markovian.
@@ -42,9 +48,10 @@ where \( d \sim \mathcal{U}([1,1.5]^2) \) represents the student’s innate disp
 \left(\frac{1}{2}, \frac{1}{2}\right) & \text{if } a \text{ is mixed}.
 \end{cases}
 \end{equation}
+The learning update term \( -\frac{S \odot (S-1)}{5} \) is chosen to be parabolic, with zeros at mastery levels [0,0] and [1,1] and a maximum update of [0.05,0.05], in order to model the increased difficulty of making progress at the early stages of learning a new topic as well as the challenge of achieving complete mastery.
 
 \subsubsection*{Implementation\textsuperscript{\ref{github}}}
-\emph{Q-learning} was chosen because the problem is model-free; compared to on-policy methods such as SARSA, Q-learning typically converges faster, which is relevant in this setting where minimizing the time to reach high mastery is a primary objective.
+\emph{Q-learning} was chosen because the problem is model-free; compared to on-policy methods such as SARSA, Q-learning typically converges faster, which is relevant in this setting where minimizing the time to reach high mastery is a primary objective. Since Q-learning is formulated for discrete state spaces, the continuous mastery states were discretized into 100 bins to make the problem tractable.
 
 To account for stochasticity in the student’s learning process, the model was evaluated by repeating training over multiple independent runs and averaging the results. Two reward formulations were considered, each tested under both \emph{greedy} and \emph{$\epsilon$-greedy} Q-learning policies. In the \emph{dense-reward setting}, the reward was defined as the instantaneous learning gain, computed as the sum of the mastery updates across both skills. In the \emph{sparse-reward setting}, a single terminal reward was provided when the student reached at least 90\% mastery in both skills\textsuperscript{\ref{fig:gph}}.
 
@@ -53,6 +60,8 @@ The results shown\textsuperscript{\ref{fig:plt}} indicate that all tested config
 
 \subsubsection*{Outlook}
 Adaptive education systems can be beneficial in certain contexts, but they should function primarily as a supplement to classroom teaching or as tools for self-directed improvement. Schools play a fundamental role in the development of children and adolescents, not only by facilitating knowledge transfer and enhancing learning abilities, but also by fostering social skills through interaction with peers and teachers. Human interaction is a crucial component of education, as evidenced by the increased levels of anxiety and depression observed among students who spent a significant portion of their developmental years in lockdown\textsuperscript{\ref{loades2021}}.
+
+
 
 
 \begin{minipage}{0.40\textwidth}
@@ -77,7 +86,7 @@ Adaptive education systems can be beneficial in certain contexts, but they shoul
 
 \begin{enumerate}
 \item \label{github}
-\href{https://github.com/kerlemn/MAS}{GitHub project repository}
+\href{https://github.com/kerlemn/MAS/tree/main/AI%20Teacher}{GitHub project repository}
 
 \item \label{loades2021}
 \href{https://doi.org/10.1007/s00787-021-01856-w}{The impact of COVID-19 lockdown on child and adolescent mental health: systematic review}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.23)  14 JAN 2026 21:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.23)  15 JAN 2026 10:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -298,24 +298,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./AI_Teacher.aux)
 \openout1 = `AI_Teacher.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -325,12 +325,12 @@ LaTeX Font Info:    ... okay on input line 14.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(14.22636pt, 493.65442pt, 89.62709pt)
-* v-part:(T,H,B)=(14.22636pt, 729.41383pt, 101.40665pt)
+* h-part:(L,W,R)=(14.22636pt, 569.05515pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 773.91498pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=493.65442pt
-* \textheight=729.41383pt
+* \textwidth=569.05515pt
+* \textheight=773.91498pt
 * \oddsidemargin=-58.04362pt
 * \evensidemargin=-58.04362pt
 * \topmargin=-95.04362pt
@@ -376,44 +376,37 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 14.
+Package hyperref Info: Link coloring OFF on input line 16.
 
 (./AI_Teacher.out) (./AI_Teacher.out)
 \@outlinefile=\write3
 \openout3 = `AI_Teacher.out'.
 
-
-Overfull \hbox (9.86197pt too wide) detected at line 44
-[][][]\OT1/cmr/m/n/10 ^^A(\OML/cmm/m/it/10 S; a; d\OT1/cmr/m/n/10 ) \OMS/cmsy/m
-/n/10 ^^X N [] \OML/cmm/m/it/10 ; []^^[ \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\O
-T1/cmr/m/n/10 01\OML/cmm/m/it/10 ; A\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 a\OT1/cmr
-/m/n/10 ) = []
- []
-
 <student.png, id=9, 598.235pt x 513.92pt>
 File: student.png Graphic file (type png)
 <use student.png>
-Package pdftex.def Info: student.png  used on input line 60.
+Package pdftex.def Info: student.png  used on input line 69.
 (pdftex.def)             Requested size: 179.47188pt x 154.17719pt.
 
+
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 61.
+(caption)                particular \caption on input line 70.
 See the caption package documentation for explanation.
 
 <graph_sparse.png, id=11, 462.528pt x 346.896pt>
 File: graph_sparse.png Graphic file (type png)
 <use graph_sparse.png>
-Package pdftex.def Info: graph_sparse.png  used on input line 67.
+Package pdftex.def Info: graph_sparse.png  used on input line 76.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 68.
+(caption)                particular \caption on input line 77.
 See the caption package documentation for explanation.
 
 <plots.png, id=12, 791.3565pt x 479.8728pt>
 File: plots.png Graphic file (type png)
 <use plots.png>
-Package pdftex.def Info: plots.png  used on input line 73.
+Package pdftex.def Info: plots.png  used on input line 82.
 (pdftex.def)             Requested size: 474.81757pt x 287.9259pt.
 [1
 
@@ -427,27 +420,29 @@ Package rerunfilecheck Info: File `AI_Teacher.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10824 strings out of 476139
- 171094 string characters out of 5794454
- 1945975 words of memory out of 5000000
- 32728 multiletter control sequences out of 15000+600000
- 559822 words of font info for 42 fonts, out of 8000000 for 9000
+ 10828 strings out of 476139
+ 171134 string characters out of 5794454
+ 1946975 words of memory out of 5000000
+ 32730 multiletter control sequences out of 15000+600000
+ 560427 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  75i,9n,79p,706b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/andrea/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
 0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti10.pfb>
-Output written on AI_Teacher.pdf (2 pages, 317081 bytes).
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti10.pfb>
+Output written on AI_Teacher.pdf (2 pages, 339009 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  15 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
