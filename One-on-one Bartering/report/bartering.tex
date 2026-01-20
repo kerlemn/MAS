@@ -1,0 +1,96 @@
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\geometry{
+ a4paper,
+ left=5mm,
+ right=5mm,
+ top=5mm,
+ bottom=20mm
+ }
+
+\begin{document}
+\noindent
+{\large\textbf{Multi-Agent Systems \hfill Automated Mechanism Design for Bartering \hfill Andrea Longo}}
+
+\vspace{1em}
+\subsubsection*{Introduction}
+
+This project studies a one-on-one bartering problem without payments using automated mechanism design (AMD). Agent 1 acts as the \emph{mechanism designer} and commits in advance to a deterministic mechanism, while agent 2 strategically reports his preferences over goods. The objective is to compute a mechanism that is direct, truthful and individually rational for agent 2, while maximizing agent 1’s expected utility. The implemented solution follows the branch-and-bound depth-first search algorithm proposed by Conitzer and Sandholm\textsuperscript{\ref{CS04}}.
+
+\subsubsection*{Model}
+
+Each agent initially owns $N$ goods, for a total of $2N$ goods. An outcome is a partition of the goods between the agents. Thus, the outcome space is
+\begin{equation}
+    O=\{0,1\}^{2N}, \quad |O|=2^{2N},
+\end{equation}
+where a $1$ indicates ownership by agent~1 and a $0$ ownership by agent~2. The first $N$ positions represent goods initially owned by agent~1, and the remaining $N$ those initially owned by agent~2.  
+For example, with $N=2$, outcome $[1,1,0,0]$ corresponds to no trade, while $[0,0,1,0]$ indicates that agent~1 traded both of her goods for the first good of agent~2.
+
+Agent~2 has a private type $\theta \in \Theta$, assigning a value in $\{1,2,3,4,5\}$ to each good. His utility function is defined as the value of the goods received in the outcome minus the value of his initial endowment. Agent~1’s valuation function is defined analogously, based on her fixed preferences.
+
+\subsubsection*{Constraints and Objective}
+
+The mechanism is \emph{direct}: agent~2 reports a type $\theta$, and the mechanism selects an outcome $M(\theta) \in O$.
+
+It must satisfy:
+\begin{itemize}
+    \item \textbf{Truthfulness}: reporting the true type is a dominant strategy for agent~2,
+\begin{equation}
+        u(\theta,M(\theta)) \ge u(\theta,M(\hat{\theta})) \quad \forall \theta,\hat{\theta}\in\Theta.
+\end{equation}
+    \item \textbf{Individual Rationality}: agent~2 never incurs a loss by participating,
+\begin{equation}
+        u(\theta,M(\theta)) \ge 0 \quad \forall \theta\in\Theta.
+\end{equation}
+\end{itemize}
+
+Subject to these constraints, agent~1 maximizes her expected utility over the type distribution.
+
+\subsubsection*{Outcome-Set-Based Mechanism in Branch-and-Bound DFS}
+
+Following Conitzer and Sandholm, mechanisms are represented implicitly by subsets of outcomes $X \subseteq O$. Each subset induces a truthful mechanism by assigning, for any reported type, a utility-maximizing outcome from $X$, with ties broken in favor of agent~1’s valuation.
+
+The \emph{branch-and-bound depth-first search} explores assignments of outcomes to included ($X$) or excluded ($Y$) sets. An admissible upper bound function $v(X,Y)$ is used to prune suboptimal branches. Individual rationality is enforced by ensuring that, for every type, at least one non-excluded outcome yields non-negative utility.
+
+\subsubsection*{Implementation\textsuperscript{\ref{github}}}
+
+Several optimizations were applied in the implementation:
+\begin{itemize}
+    \item Utilities for both agents were cached to avoid recomputation.
+    \item The evaluation of $v(X,Y)$ compares candidate outcomes only against the best utility per type.
+    \item Outcome exclusion was implemented using boolean masking.
+    \item A finite subset of types randomly sampled with $|\Theta|=K$ was precomputed.
+\end{itemize}
+
+Due to computational complexity, experiments were run with $N=2$ goods per agent and $K=15$ types. For $N=3$, the algorithm did not terminate in reasonable time.
+
+\subsubsection*{Verification}
+
+For a fixed preference profile of agent~1 and a selected type of agent~2, all outcomes in $O$ were analyzed\textsuperscript{Fig \ref{fig:result}}. Each outcome was reported in the form "$\text{outcome:status $\rightarrow$ reason}$", where the status indicates whether the outcome belongs to the computed set $CB$, is excluded (\textbf{X}), is the outcome selected by the mechanism (\textbf{*}), or is an alternative yielding identical utilities for both agents (\textbf{$\sim$}).
+
+For every excluded outcome, a specific explanation is provided, identifying violations of individual rationality, truthfulness, or dominance by another outcome that yields higher utility to either agents. This complete enumeration confirms that the chosen outcome is optimal and that all exclusions are consistent with the constraints.
+
+\pagebreak
+
+\subsubsection*{References}
+
+\begin{figure}[ht]
+  \includegraphics[scale=0.29]{example.png}
+  \caption{Example execution report}
+  \label{fig:result}
+\end{figure}
+
+\begin{enumerate}
+\item \label{CS04}
+\href{https://www.cs.cmu.edu/~sandholm/amd_algorithm.AAMAS04.pdf}{An Algorithm for Automatically Designing Deterministic Mechanisms without
+Payments}
+
+\item \label{github}
+\href{https://github.com/kerlemn/MAS/tree/main/One-on-one%20Bartering}{GitHub project repository}
+\end{enumerate}
+
+\end{document}

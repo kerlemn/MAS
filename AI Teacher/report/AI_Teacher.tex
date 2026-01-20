@@ -26,12 +26,12 @@ Given this assumption, the core components of the RL formulation are defined as 
     \item \textbf{States}: A continuous state vector \( S \in [0,1]^2 \), representing the student’s mastery in algebra and arithmetic.
     \item \textbf{Actions}: The type of assignment provided by the teacher, namely algebra-only, arithmetic-only, or mixed.
     \item \textbf{Rewards}: Either the sum of the student’s improvements or the reaching of a specific threshold.
-    \item \textbf{Transition dynamics}: The student’s skills evolve probabilistically based on their current mastery levels and the assigned task\textsuperscript{\ref{fig:td}}.
+    \item \textbf{Transition dynamics}: The student’s skills evolve probabilistically based on their current mastery levels and the assigned task\textsuperscript{Fig \ref{fig:td}}.
 \end{itemize}
 
 The specific type of RL problem can be classified based on the knowledge and observability of the environment. From the teacher’s perspective, the student’s learning dynamics are unknown and cannot be explicitly modeled, so the problem is best addressed using \emph{model-free reinforcement learning}, rather than approaches that rely on known transition dynamics.
 
-Regarding observability, the student’s true mastery levels are not directly observable and must be inferred from assignment outcomes, making the environment \emph{partially observable}. However, for the scope of this project, we assume that the AI Teacher generates high-quality assignments that accurately assess student mastery, allowing us to approximate the problem as a fully observable Markov Decision Process (MDP).
+Regarding observability, the student’s true mastery levels are not directly observable and must be inferred from assignment outcomes, making the environment \emph{partially observable}. However, for the scope of this project, we assume that the AI Teacher generates high-quality assignments that accurately assess student mastery, allowing us to approximate the problem as a fully observable Markov Decision Process.
 
 \subsubsection*{Simulation Environment}
 
@@ -51,18 +51,19 @@ where \( d \sim \mathcal{U}([1,1.5]^2) \) represents the student’s innate disp
 The learning update term \( -\frac{S \odot (S-1)}{5} \) is chosen to be parabolic, with zeros at mastery levels [0,0] and [1,1] and a maximum update of [0.05,0.05], in order to model the increased difficulty of making progress at the early stages of learning a new topic as well as the challenge of achieving complete mastery.
 
 \subsubsection*{Implementation\textsuperscript{\ref{github}}}
-\emph{Q-learning} was chosen because the problem is model-free; compared to on-policy methods such as SARSA, Q-learning typically converges faster, which is relevant in this setting where minimizing the time to reach high mastery is a primary objective. Since Q-learning is formulated for discrete state spaces, the continuous mastery states were discretized into 100 bins to make the problem tractable.
+\emph{Q-learning} was chosen because the problem is model-free; compared to on-policy methods such as SARSA, Q-learning typically is more suited for stable and low-risk environments where the goal is the most optimal path\textsuperscript{\ref{cliffwalking}}. Since Q-learning is formulated for discrete state spaces, the continuous mastery states were discretized into 100 bins to make the problem tractable.
 
-To account for stochasticity in the student’s learning process, the model was evaluated by repeating training over multiple independent runs and averaging the results. Two reward formulations were considered, each tested under both \emph{greedy} and \emph{$\epsilon$-greedy} Q-learning policies. In the \emph{dense-reward setting}, the reward was defined as the instantaneous learning gain, computed as the sum of the mastery updates across both skills. In the \emph{sparse-reward setting}, a single terminal reward was provided when the student reached at least 90\% mastery in both skills\textsuperscript{\ref{fig:gph}}.
+To account for stochasticity in the student’s learning process, the model was evaluated by repeating training over multiple independent runs and averaging the results. Two reward formulations were considered, each tested under both \emph{greedy} and \emph{$\epsilon$-greedy} Q-learning policies. In the \emph{dense-reward setting}, the reward was defined as the instantaneous learning gain, computed as the sum of the mastery updates across both skills. In the \emph{sparse-reward setting}, a single terminal reward was provided when the student reached at least 90\% mastery in both skills\textsuperscript{Fig \ref{fig:gph}}.
 
 \subsubsection*{Results}
-The results shown\textsuperscript{\ref{fig:plt}} indicate that all tested configurations exhibit comparable learning efficiency. Across runs, the median number of assignments required to reach [0.9,0.9] mastery is approximately 44 for all settings. The sparse-reward, $\epsilon$-greedy configuration reaches mastery slightly earlier, with an average improvement of about one assignment relative to the other configurations.
+The results shown\textsuperscript{Fig \ref{fig:plt}} indicate that all tested configurations exhibit comparable learning efficiency. Across runs, the median number of assignments required to reach [0.9,0.9] mastery is approximately 44 for all settings. The sparse-reward, $\epsilon$-greedy configuration reaches mastery slightly earlier, with an average improvement of about one assignment relative to the other configurations.
 
 \subsubsection*{Outlook}
 Adaptive education systems can be beneficial in certain contexts, but they should function primarily as a supplement to classroom teaching or as tools for self-directed improvement. Schools play a fundamental role in the development of children and adolescents, not only by facilitating knowledge transfer and enhancing learning abilities, but also by fostering social skills through interaction with peers and teachers. Human interaction is a crucial component of education, as evidenced by the increased levels of anxiety and depression observed among students who spent a significant portion of their developmental years in lockdown\textsuperscript{\ref{loades2021}}.
 
+\pagebreak
 
-
+\subsubsection*{References}
 
 \begin{minipage}{0.40\textwidth}
   \centering
@@ -87,6 +88,9 @@ Adaptive education systems can be beneficial in certain contexts, but they shoul
 \begin{enumerate}
 \item \label{github}
 \href{https://github.com/kerlemn/MAS/tree/main/AI%20Teacher}{GitHub project repository}
+
+\item \label{cliffwalking}
+\href{https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf#page=172}{Cliff Walking, Reinforcement Learning: An Introduction}
 
 \item \label{loades2021}
 \href{https://doi.org/10.1007/s00787-021-01856-w}{The impact of COVID-19 lockdown on child and adolescent mental health: systematic review}
