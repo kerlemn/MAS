@@ -134,19 +134,30 @@ def truthfulness_check(outcome):
         cb_plus.append(outcome_int)
 
         for true_type in types:
-            truthful_out = int_to_bin[M(true_type, cb)]
+            truthful_out = int_to_bin[M(true_type, cb_plus)]
             truthful_util = utility(true_type, truthful_out)
 
             for lie_type in types:
-                if np.array_equal(true_type,lie_type):
-                    continue
                 lie_out = int_to_bin[M(lie_type, cb_plus)]
                 lie_util = utility(true_type, lie_out)
 
                 if lie_util > truthful_util:
-                    return f"X -> truthfulness constraint ({true_type} could lie to be {lie_type} to reach outcome {lie_out} with util {lie_util} instead of reaching {truthful_out} with util {truthful_util})"
-        return "X -> excluded because it lowers agent1 expected objective across the type distribution"
-    return "Error"
+                    return "Error: truthfullness guaranteed by subset maximisation is violeted"
+        expected_before = 0.0
+        expected_after = 0.0
+        for t in types:
+            # Utility under current mechanism
+            out_before = int_to_bin[M(t, cb)]
+            util_before = utility(type1, out_before, player=False)
+            expected_before += util_before
+
+            # Utility under mechanism including candidate outcome
+            out_after = int_to_bin[M(t, cb_plus)]
+            util_after = utility(type1, out_after, player=False)
+            expected_after += util_after
+        if expected_before > expected_after:
+            return f"X -> adding {outcome} reduces expected agent1 utility from {expected_before/typeSpace:.2f} to {expected_after/typeSpace:.2f}"
+    return "Error: mechansim is broken"
 
 for outcome in int_to_bin:
     reason = ""

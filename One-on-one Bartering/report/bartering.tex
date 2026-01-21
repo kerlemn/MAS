@@ -52,9 +52,10 @@ Subject to these constraints, agent~1 maximizes her expected utility over the ty
 
 \subsubsection*{Outcome-Set-Based Mechanism in Branch-and-Bound DFS}
 
-Following Conitzer and Sandholm, mechanisms are represented implicitly by subsets of outcomes $X \subseteq O$. Each subset induces a truthful mechanism by assigning, for any reported type, a utility-maximizing outcome from $X$, with ties broken in favor of agent~1’s valuation.
+Following Conitzer and Sandholm, mechanisms are represented by subsets of outcomes $X \subseteq O$, each inducing a truthful mechanism by assigning to each reported type the utility-maximizing outcome in $X$, with ties broken in favor of agent~1. Since agent~2 always receives their maximal-utility outcome in $X$, truthfulness holds for every subset.
 
-The \emph{branch-and-bound depth-first search} explores assignments of outcomes to included ($X$) or excluded ($Y$) sets. An admissible upper bound function $v(X,Y)$ is used to prune suboptimal branches. Individual rationality is enforced by ensuring that, for every type, at least one non-excluded outcome yields non-negative utility.
+The \emph{branch-and-bound depth-first search} explores assignments of outcomes to included ($X$) or excluded ($Y$) sets, using an admissible upper bound function $v(X,Y)$ to prune suboptimal branches. Individual rationality is ensured by requiring that, for every type, at least one included outcome yields non-negative utility.
+
 
 \subsubsection*{Implementation\textsuperscript{\ref{github}}}
 
@@ -78,7 +79,7 @@ For every excluded outcome, a specific explanation is provided, identifying viol
 \pagebreak
 
 \begin{figure}[ht]
-  \includegraphics[scale=0.29]{example.png}
+  \includegraphics[scale=0.45]{example.png}
   \caption{Example execution report}
   \label{fig:result}
 \end{figure}
