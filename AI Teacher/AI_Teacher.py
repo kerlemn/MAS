@@ -12,7 +12,7 @@ class StudentEnv:
         self.only_final_reward=only_final_reward
         self.disposition = np.random.uniform(1.0, 1.5, size=2)
         self.state = None
-        self.actions = [0, 1, 2]  # 0: arithmetic, 1: algebra, 2: mixed
+        self.actions = [0, 1, 2]  # 0: algebra, 1: arithmetic, 2: mixed
         self.reset()
 
     def reset(self):
