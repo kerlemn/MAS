@@ -66,23 +66,24 @@ Several optimizations were applied in the implementation:
     \item A finite subset of types randomly sampled with $|\Theta|=K$ was precomputed.
 \end{itemize}
 
-Due to computational complexity, experiments were run with $N=2$ goods per agent and $K=15$ types. For $N=3$, the algorithm did not terminate in reasonable time.
+Due to the time complexity arising from enumerating all $O$ subsets, experiments were limited to $N=2$ goods per agent with $K=15$ sampled types. In the worst cases, the algorithm considers up to $2^{2^{4}}$ subsets, whereas increasing to $N=3$ requires exploring up to $2^{2^{6}}$ subsets, over $10^{14}$ times larger. Consequently, the algorithm did not terminate in reasonable time for $N=3$.
+
 
 \subsubsection*{Verification}
 
-For a fixed preference profile of agent~1 and a selected type of agent~2, all outcomes in $O$ were analyzed\textsuperscript{Fig \ref{fig:result}}. Each outcome was reported in the form "$\text{outcome:status $\rightarrow$ reason}$", where the status indicates whether the outcome belongs to the computed set $CB$, is excluded (\textbf{X}), is the outcome selected by the mechanism (\textbf{*}), or is an alternative yielding identical utilities for both agents (\textbf{$\sim$}).
+For a fixed preference profile of agent~1 and a selected type of agent~2, all outcomes in $O$ were analyzed\textsuperscript{Fig \ref{fig:result}}. Each outcome was reported in the form "$\text{outcome:status $\rightarrow$ reason}$", where the status indicates whether the outcome belongs to the set computed by the mechanism, is excluded (\textbf{X}), is the outcome selected by the mechanism (\textbf{*}), or is an alternative yielding identical utilities for both agents (\textbf{$\sim$}).
 
 For every excluded outcome, a specific explanation is provided, identifying violations of individual rationality, truthfulness, or dominance by another outcome that yields higher utility to either agents. This complete enumeration confirms that the chosen outcome is optimal and that all exclusions are consistent with the constraints.
 
 \pagebreak
-
-\subsubsection*{References}
 
 \begin{figure}[ht]
   \includegraphics[scale=0.29]{example.png}
   \caption{Example execution report}
   \label{fig:result}
 \end{figure}
+
+\subsubsection*{References}
 
 \begin{enumerate}
 \item \label{CS04}

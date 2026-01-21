@@ -165,7 +165,7 @@ for outcome in int_to_bin:
             if util1>real_util_1:
                 reason = truthfulness_check(outcome)
             elif util1<real_util_1:
-                reason = f"X -> same util for agent2 ({util1}), not the maximum valuation for agent1 ({util1}<{real_util_1})"
+                reason = f"X -> same util for agent2 ({util2}), not the maximum valuation for agent1 ({util1}<{real_util_1})"
             else:
                 if all(outcome == real_out):
                     reason = f"* -> best outcome chosen from the mechanism"

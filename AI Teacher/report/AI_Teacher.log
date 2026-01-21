@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.23)  20 JAN 2026 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.23)  21 JAN 2026 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -388,61 +388,69 @@ Package hyperref Info: Link coloring OFF on input line 16.
 <student.png, id=40, 598.235pt x 513.92pt>
 File: student.png Graphic file (type png)
 <use student.png>
-Package pdftex.def Info: student.png  used on input line 70.
+Package pdftex.def Info: student.png  used on input line 68.
 (pdftex.def)             Requested size: 179.47188pt x 154.17719pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 71.
+(caption)                particular \caption on input line 69.
 See the caption package documentation for explanation.
 
 <graph_sparse.png, id=42, 462.528pt x 346.896pt>
 File: graph_sparse.png Graphic file (type png)
 <use graph_sparse.png>
-Package pdftex.def Info: graph_sparse.png  used on input line 77.
+Package pdftex.def Info: graph_sparse.png  used on input line 75.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 78.
+(caption)                particular \caption on input line 76.
 See the caption package documentation for explanation.
 
 <plots.png, id=43, 791.3565pt x 479.8728pt>
 File: plots.png Graphic file (type png)
 <use plots.png>
-Package pdftex.def Info: plots.png  used on input line 83.
+Package pdftex.def Info: plots.png  used on input line 81.
 (pdftex.def)             Requested size: 474.81757pt x 287.9259pt.
 [2 <./student.png> <./graph_sparse.png> <./plots.png>] (./AI_Teacher.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `AI_Teacher.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10831 strings out of 476139
- 171164 string characters out of 5794454
+ 10832 strings out of 476139
+ 171180 string characters out of 5794454
  1945975 words of memory out of 5000000
  32731 multiletter control sequences out of 15000+600000
  560427 words of font info for 44 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  75i,9n,79p,706b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/andrea/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.60
-0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb>
-Output written on AI_Teacher.pdf (2 pages, 340254 bytes).
+
+pdfTeX warning (dest): name{figure.caption.7} has been referenced but does not 
+exist, replaced by a fixed one
+
+ </home/andrea/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600p
+k></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb>
+Output written on AI_Teacher.pdf (2 pages, 340276 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 111 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
