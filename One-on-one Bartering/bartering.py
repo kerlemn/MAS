@@ -111,7 +111,7 @@ def M(type2, cb):
     return best_responses[np.argmax(g_values)]
 
 print("--- Results")
-cb, l = bnb_dfs()
+cb, expected_util = bnb_dfs()
 print(f"Type 1 : {type1}")
 for type2 in types:
     res = M(type2, cb)
@@ -143,20 +143,16 @@ def truthfulness_check(outcome):
 
                 if lie_util > truthful_util:
                     return "Error: truthfullness guaranteed by subset maximisation is violeted"
-        expected_before = 0.0
+
         expected_after = 0.0
         for t in types:
-            # Utility under current mechanism
-            out_before = int_to_bin[M(t, cb)]
-            util_before = utility(type1, out_before, player=False)
-            expected_before += util_before
-
             # Utility under mechanism including candidate outcome
             out_after = int_to_bin[M(t, cb_plus)]
             util_after = utility(type1, out_after, player=False)
             expected_after += util_after
-        if expected_before > expected_after:
-            return f"X -> adding {outcome} reduces expected agent1 utility from {expected_before/typeSpace:.2f} to {expected_after/typeSpace:.2f}"
+        expected_after/=typeSpace
+        if expected_util > expected_after:
+            return f"X -> adding {outcome} reduces expected agent1 utility from {expected_util:.2f} to {expected_after:.2f}"
     return "Error: mechansim is broken"
 
 for outcome in int_to_bin:
