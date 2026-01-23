@@ -118,7 +118,7 @@ for type2 in types:
     out = int_to_bin[res]
     print(f"Type 2 : {type2}, outcome: {out}, agent1_util: {utility(type1, out, player=False)}, agent2_util: {utility(type2, out)}")
 
-print("--- Analisys on first type for agent 2")
+print("--- Analysis on first type for agent 2")
 type2 = types[0]
 
 real_out = int_to_bin[M(type2, cb)]
